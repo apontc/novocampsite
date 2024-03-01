@@ -291,6 +291,46 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script> //get the children of each element filtered by a selector 
+        $(function() {
+            $(".carousel").carousel( {interval: 2000});
+            $("#carouselButton").click(function(){ // click method from jquery, which sets up an event handler
+                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                    $(".carousel").carousel("pause");
+                    $("#carouselButton").children("i").removeClass("fa-pause");
+                    $("#carouselButton").children("i").addClass("fa-play");         
+                } else { 
+                    $(".carousel").carousel("cycle");
+                    $("#carouselButton").children("i").removeClass("fa-play");
+                    $("#carouselButton").children("i").addClass("fa-pause");                   
+                }
+            });
+        });
+
+        // <button type="button" class="btn btn-warning" " id="btnShowBanana">Show Banana</button>
+        // <button type="button" class="btn btn-success" id="btnShowMonkey">Show Monkey</button>
+        // <button type="button" class="btn btn-warning" id="btnHideBanana">Hide Banana</button>
+        // <button type="button" class="btn btn-success" id="btnHideMonkey">Hide Monkey</button>
+        // <div>
+        // <img class="collapse" id="banana" src="https://i.ibb.co/82WT957/banana.png" />
+        // <img class="collapse" id="monkey" src="https://i.ibb.co/VJDfnxN/monkey-w-banana.png" />
+        // </div>
+        
+        //     $(function() { another example of jquery selectors
+        //         $("#btnShowBanana").click(function() {
+        //             $("#banana").collapse('show');
+        //         });
+        //         $("#btnHideBanana").click(function() 
+        //     });
+        //     $("#btnShowMonkey").click(function() {
+        //         $("#monkey").collapse('show');
+        //     });
+        //     $("#btnHideMonkey").click(function() {
+        //         $("#monkey").collapse('hide');
+        //     });
+        // });
+    </script>
     
     
     <!-- script for bootstrap tooltip using jquery-->
@@ -298,7 +338,7 @@
     
     <!-- supports tooltips-->
     <!-- <script>
-        $(function () {
+        $(function () { the dollar sign indicates that jquery will start; the shorthand of $document.ready(function())
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script> -->
