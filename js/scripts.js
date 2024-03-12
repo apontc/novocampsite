@@ -13,6 +13,18 @@ $(function() {
             $("#carouselButton").children("i").addClass("fa-pause");                    
         }
     });
-
     $('[data-toggle="tooltip"]').tooltip();
+
+    $("#reserveButton").click(function() {
+        $("#reserveModal").modal('show');
+    });
+    
+    $("#loginButton").click(function() {
+        $("#loginModal").modal('show');
+    });
 });
+
+//function for the login Modal
+$(function(){
+
+})
